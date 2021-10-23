@@ -35,8 +35,8 @@ private:
     objetos_graficos *personaje;
 
         /// CONTENEDORES DE OBJETOS
-    vector<objetos_graficos *> objetosGraficos;
-    vector<objetos_graficos *>::iterator itObjGra;
+    std::vector<objetos_graficos *> objetosGraficos;
+    std::vector<objetos_graficos *>::iterator itObjGra;
 
         /// CARACTERISTICAS DE ESCRITORIO
     int limit_x,limit_y;

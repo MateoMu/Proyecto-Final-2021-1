@@ -2,13 +2,15 @@
 #include "ui_MainWindow.h"
 
 ///         CONSTRUCTOR         ///
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
+MainWindow::MainWindow(QWidget *parent)
+    :QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
         ///SE ASIGNA UN PADRE A LA INTERFAZ GRAFICA
     ui->setupUi(this);
 
+        ///SE CREAN LOS OBJETOS EN MEMORIA DINAMICA
+    instanceItems();
 
         ///VISUALIZACION Y ESCENA
     view->setScene(scene);
@@ -20,11 +22,16 @@ MainWindow::MainWindow(QWidget *parent) :
     game_time = 0;
     srand(time(NULL));
 
+
+
 }
 
 ///         DESTRUCTOR         ///
 MainWindow::~MainWindow()
 {
+        /// LABELS
+    delete label1;
+
         ///ESCENARIO
     delete view;
     delete scene;
@@ -49,15 +56,19 @@ void MainWindow::instanceItems()
     scene = new escena();
 }
 
-void MainWindow::addItems2Scene(int opc)
+void MainWindow::addItems2Scene(void)
 {
     QColor bg_color(255, 0, 0, 0);
     QPalette p(label1->palette());
     p.setColor(QPalette::Background, bg_color);
     QPalette p1 = palette();
     p1.setColor(QPalette::Highlight, Qt::red);
-            addObjetoGrafico(":/personajes/imagenes/senor1.png",desk_widht/8,2*desk_height/4,200,300,true);
-            //setPosSir(desk_widht/8,2*desk_height/4);
+            addObjetoGrafico(":/../Imagenes/fondo2.jpeg",desk_widht/8,2*desk_height/4,200,300,true);
+            setPosSir(desk_widht/8,2*desk_height/4);
+            label1->setGeometry((desk_widht/2)-150,desk_height/10,100,50);
+                        label1->setStyleSheet("border-image:url(:/../Imagenes/fondo2.jpeg);");
+                        p.setColor(QPalette::Background, bg_color);
+                        label1->setPalette(p);
 
 }
 
@@ -79,13 +90,13 @@ void MainWindow::cambiofondo()
 
 void MainWindow::imagen1()
 {
-    view->setBackgroundBrush(QImage(":/personajes/imagenes/fondo.png"));
+    view->setBackgroundBrush(QImage(":/../Imagenes/fondo1.jpeg"));
 }
 
 void MainWindow::imagen2()
 {
-    if (img) {view->setBackgroundBrush(QImage(":/personajes/imagenes/fondo.png")); img = false;}
-    else {view->setBackgroundBrush(QImage(":/personajes/imagenes/GIFT.png")); img = true;}
+    if (img) {view->setBackgroundBrush(QImage(":/../Imagenes/fondo1.jpeg")); img = false;}
+    else {view->setBackgroundBrush(QImage(":/../Imagenes/fondo2.jpeg")); img = true;}
 }
 
 void MainWindow::setPosSir(int x, int y)

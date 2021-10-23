@@ -3,8 +3,8 @@
 ///         CONSTRUCTOR         ///
 escena::escena()
 {
-    image = new QPixmap(":/personajes/imagenes/fondo.png");
-    image2 = new QPixmap(":/personajes/imagenes/Fondo_Original1.png");
+    image = new QPixmap(":/../Imagenes/fondo1.jpeg");
+    image2 = new QPixmap(":/../Imagenes/fondo2.jpeg");
 }
 
 ///         DESTRUCTOR         ///

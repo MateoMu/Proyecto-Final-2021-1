@@ -33,7 +33,7 @@ public:
         /// FUNCIONES DE CARGA DE OBJETOS Y PRESENTACION
     void instanceItems();
     void hideItems();
-    void addItems2Scene(int opc);
+    void addItems2Scene(void);
     void connectItems();
 
         /// SLOTS
@@ -72,7 +72,7 @@ private:
 
         /// VARIABLES DE CONTROL
     QString match_name,username;
-    QString main_caracter_path = ":/personajes/imagenes/senor11.png";
+    QString main_caracter_path = ":/../Imagenes/fondo2.jpeg";
 
         ///POSICION DE PERSONAJE PRINCIPAL
     int x_sir = desk_widht/8, y_sir = desk_height-310;
