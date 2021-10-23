@@ -11,9 +11,11 @@ public:
     escena();
     ~escena();
 
+
+
         /// CARACTERISTICAS DE ESCRITORIO
     void setWindowProperty(int desk_w, int desk_h);
-    //virtual void drawBackground(QPainter *painter, const QRectF &exposed);
+
 
 private:
         /// CARACTERISTICAS DE ESCRITORIO

@@ -27,11 +27,17 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         MainWindow.cpp \
-    escena.cpp
+    escena.cpp \
+    basedatos.cpp \
+    movimientos.cpp \
+    objetos_graficos.cpp
 
 HEADERS += \
         MainWindow.h \
-    escena.h
+    escena.h \
+    basedatos.h \
+    movimientos.h \
+    objetos_graficos.h
 
 FORMS += \
         MainWindow.ui
