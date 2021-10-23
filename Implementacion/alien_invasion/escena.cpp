@@ -38,3 +38,8 @@ void escena::addObjetoGrafico(QString ruta, int x, int y, int w, int h,bool main
     }
 }
 
+void escena::circulo(int r, int px, int py)
+{
+    //QGraphicsItem *circu = new QGraphicsItem();
+
+}

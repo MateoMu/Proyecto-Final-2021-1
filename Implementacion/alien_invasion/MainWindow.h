@@ -60,7 +60,7 @@ private:
     QGraphicsView *view;
 
         /// MEDIDAS DE ESCRITORIO
-    int desk_widht,desk_height;
+    int desk_widht=1200,desk_height=600;
 
         /// VALORES DE TIMERS
     int game_time = 0;

@@ -21,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
     this->showMaximized();
     game_time = 0;
     srand(time(NULL));
-
-
+    setDeskProperty(desk_widht,desk_height);
+    addItems2Scene();
 
 }
 
@@ -59,23 +59,24 @@ void MainWindow::instanceItems()
 void MainWindow::addItems2Scene(void)
 {
     QColor bg_color(255, 0, 0, 0);
-    QPalette p(label1->palette());
-    p.setColor(QPalette::Background, bg_color);
+    //QPalette p(label1->palette());
+    //p.setColor(QPalette::Background, bg_color);
     QPalette p1 = palette();
     p1.setColor(QPalette::Highlight, Qt::red);
-            addObjetoGrafico(":/../Imagenes/fondo2.jpeg",desk_widht/8,2*desk_height/4,200,300,true);
-            setPosSir(desk_widht/8,2*desk_height/4);
-            label1->setGeometry((desk_widht/2)-150,desk_height/10,100,50);
-                        label1->setStyleSheet("border-image:url(:/../Imagenes/fondo2.jpeg);");
-                        p.setColor(QPalette::Background, bg_color);
-                        label1->setPalette(p);
+            addObjetoGrafico(":/../Imagenes/fondo2.jpeg",100,100,200,300,true);
+            //addObjetoGrafico(":/../Imagenes/fondo2.jpeg",desk_widht/8,2*desk_height/4,200,300,true);
+            //setPosSir(desk_widht/8,2*desk_height/4);
+            //label1->setGeometry((desk_widht/2)-150,desk_height/10,100,50);
+                        //label1->setStyleSheet("border-image:url(:/../Imagenes/fondo2.jpeg);");
+                        //p.setColor(QPalette::Background, bg_color);
+                        //label1->setPalette(p);
 
 }
 
 ///         AÑADE OBJETOS SIN MOVIMIENTO         ///
 void MainWindow::addObjetoGrafico(QString ruta, int x, int y, int w, int h,bool main)
 {
-    ///DECLARACION DE OBJETOS
+        ///DECLARACION DE OBJETOS
     scene->addObjetoGrafico(ruta,x,y,w,h,main);
 }
 

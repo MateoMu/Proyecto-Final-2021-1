@@ -28,7 +28,7 @@ public:
     //void explode(Objeto_Movil *enem);
     void explodePlusPlus();
 
-
+    void circulo(int r, int px, int py);
 
 private:
         /// APUNTADOR A OBJETOS GRAFICOS
