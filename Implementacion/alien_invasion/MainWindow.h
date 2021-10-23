@@ -36,20 +36,49 @@ public:
     void addItems2Scene(int opc);
     void connectItems();
 
+        /// SLOTS
+    void comeBack();
+    void moveObject();
+    void addObjetoGrafico(QString ruta, int x, int y, int w, int h, bool main);
 
+        /// FUNCIONES DE PRUEBA
+    void add();
+    void cambiofondo();
+
+    void imagen1();
+    void imagen2();
+    void setPosSir(int x, int y);
 
 private:
     Ui::MainWindow *ui;
 
-    /// ESCENARIO
-escena *scene;
-QGraphicsView *view;
+        /// LABELS
+    QLabel *label1;
 
-/// MEDIDAS DE ESCRITORIO
-int desk_widht,desk_height;
+        /// ESCENARIO
+    escena *scene;
+    QGraphicsView *view;
 
-/// VALORES DE TIMERS
-int game_time = 0;
+        /// MEDIDAS DE ESCRITORIO
+    int desk_widht,desk_height;
+
+        /// VALORES DE TIMERS
+    int game_time = 0;
+
+        /// VARIABLES AUXILIARES
+    bool img = true;
+    int cont_aux = 0;
+    int cont=1;
+
+        /// VARIABLES DE CONTROL
+    QString match_name,username;
+    QString main_caracter_path = ":/personajes/imagenes/senor11.png";
+
+        ///POSICION DE PERSONAJE PRINCIPAL
+    int x_sir = desk_widht/8, y_sir = desk_height-310;
+    int w_sir = 200, h_sir = 300;
+
+
 
 };
 

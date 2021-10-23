@@ -206,7 +206,6 @@ Makefile: ../Implementacion/alien_invasion/alien_invasion.pro C:/Qt1/5.11.2/ming
 		C:/Qt1/5.11.2/mingw53_32/mkspecs/features/qt_config.prf \
 		C:/Qt1/5.11.2/mingw53_32/mkspecs/win32-g++/qmake.conf \
 		C:/Qt1/5.11.2/mingw53_32/mkspecs/features/spec_post.prf \
-		.qmake.stash \
 		C:/Qt1/5.11.2/mingw53_32/mkspecs/features/exclusive_builds.prf \
 		C:/Qt1/5.11.2/mingw53_32/mkspecs/features/toolchain.prf \
 		C:/Qt1/5.11.2/mingw53_32/mkspecs/features/default_pre.prf \
@@ -380,7 +379,6 @@ C:/Qt1/5.11.2/mingw53_32/mkspecs/features/qt_functions.prf:
 C:/Qt1/5.11.2/mingw53_32/mkspecs/features/qt_config.prf:
 C:/Qt1/5.11.2/mingw53_32/mkspecs/win32-g++/qmake.conf:
 C:/Qt1/5.11.2/mingw53_32/mkspecs/features/spec_post.prf:
-.qmake.stash:
 C:/Qt1/5.11.2/mingw53_32/mkspecs/features/exclusive_builds.prf:
 C:/Qt1/5.11.2/mingw53_32/mkspecs/features/toolchain.prf:
 C:/Qt1/5.11.2/mingw53_32/mkspecs/features/default_pre.prf:
