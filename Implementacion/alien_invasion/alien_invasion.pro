@@ -30,14 +30,18 @@ SOURCES += \
     escena.cpp \
     basedatos.cpp \
     movimientos.cpp \
-    objetos_graficos.cpp
+    objetos_graficos.cpp \
+    control_usuario.cpp \
+    objetos_movil.cpp
 
 HEADERS += \
         MainWindow.h \
     escena.h \
     basedatos.h \
     movimientos.h \
-    objetos_graficos.h
+    objetos_graficos.h \
+    control_usuario.h \
+    objetos_movil.h
 
 FORMS += \
         MainWindow.ui
@@ -48,4 +52,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    imagenes.qrc
+    Imagenes.qrc

@@ -57,3 +57,36 @@ void objetos_graficos::setImage(QPixmap *value)
     ///RETORNO DE VALOR
     image = value;
 }
+
+QString objetos_graficos::getRuta() const
+{
+    ///RETORNO DE VALOR
+    return ruta;
+}
+
+int objetos_graficos::getW() const
+{
+    ///RETORNO DE VALOR
+    return w;
+}
+
+int objetos_graficos::getH() const
+{
+    ///RETORNO DE VALOR
+    return h;
+}
+
+void objetos_graficos::setEscala(float value)
+{
+    escala = value;
+}
+
+void objetos_graficos::escalaMinusMinus()
+{
+    escala = escala/cont;
+}
+
+void objetos_graficos::setRest(float value)
+{
+    rest = value;
+}

@@ -10,7 +10,14 @@ escena::escena()
 ///         DESTRUCTOR         ///
 escena::~escena()
 {
+        ///ELIMINACION DE MEMORIA
+    delete personaje;
+}
 
+void escena::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+{
+    QGraphicsScene::mouseMoveEvent(event);
+    //qDebug()<<"x "<<event->scenePos().x()<<" y "<<event->scenePos().y();
 }
 
 ///         PROPIEDADES DE VENTANA         ///
@@ -38,8 +45,57 @@ void escena::addObjetoGrafico(QString ruta, int x, int y, int w, int h,bool main
     }
 }
 
-void escena::circulo(int r, int px, int py)
+///         FUNCION MOVIMIENTO DE PRUEBA         ///
+void escena::doSome()
 {
-    //QGraphicsItem *circu = new QGraphicsItem();
+    ///ASIGNACION DE VALORES
+    personaje->set_Pos(personaje->getX()+50,personaje->getY());
+}
 
+///         AÑADIR OBJETOS GRAFICOS MOVILES         ///
+void escena::addObjetoMovil(QString ruta, int x, int y,int xf,int yf, int w, int h, int move)
+{
+    ///DECLARACION DE VARIABLES AUXILIARES LOCALES
+    int param = 5;              //Parametro Altura Maxima
+    bool minMax = true;         //Minimo Valor del Parametro
+
+    ///CREACION DE OBJETO MOVIL
+    muni = new objetos_movil(ruta,x,y,xf,yf,w,h,move);
+    objetosMoviles.push_back(muni);     //Añadir objeto a la lista de objetos moviles
+
+    /// ASIGNACION DE MOVIMIENTO PARABOLICO
+    if(move == 1) {
+        muni->setMovParabolico(xf,yf,param,minMax);
+        muni->setInverseMove();
+    }   //Calcula velocidad y angulo inicial
+
+    //qDebug()<<"No hay problemas con la inicializacion del movimiento";
+
+    //ASIGNACION DE MOVIMIENTO SENOIDAL
+    //muni->setMovSenoidal();
+
+    /// INICIALIZACION DE OBJETO EN ESCENA
+    this->addItem(muni);                //Se añade el objeto a la escena
+    muni->startMove(time_move);                //Asigna valor de timeout para el movimiento
+}
+
+void escena::addObjetoMovil(QString ruta, int x, int y, int v0, int angle, int move)
+{
+    ///CREACION DE OBJETO MOVIL
+    muni = new objetos_movil(ruta,x,y,0,500,100,100,move);
+    objetosMoviles.push_back(muni);     //Añadir objeto a la lista de objetos moviles
+    muni->setVel(v0,angle);
+
+    /// INICIALIZACION DE OBJETO EN ESCENA
+    this->addItem(muni);                //Se añade el objeto a la escena
+}
+
+vector<objetos_movil *> escena::getObjetosMoviles() const
+{
+    return objetosMoviles;
+}
+
+void escena::setBackGround(bool value)
+{
+    backGround = value;
 }

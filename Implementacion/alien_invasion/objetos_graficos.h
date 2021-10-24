@@ -21,6 +21,17 @@ public:
 
     QPixmap *getImage() const;
     void setImage(QPixmap *value);
+    QString getRuta() const;
+
+
+    int getW() const;
+    int getH() const;
+    int cont = 0;
+
+    void setEscala(float value);
+    void escalaMinusMinus();
+
+    void setRest(float value);
 
 private:
     int x,y;
