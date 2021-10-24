@@ -21,6 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     this->showMaximized();
     game_time = 0;
     srand(time(NULL));
+    setDeskProperty(desk_widht,desk_height);
+    imagen1();
+    addItems2Scene();
 
 
 
@@ -59,16 +62,16 @@ void MainWindow::instanceItems()
 void MainWindow::addItems2Scene(void)
 {
     QColor bg_color(255, 0, 0, 0);
-    QPalette p(label1->palette());
-    p.setColor(QPalette::Background, bg_color);
+    //QPalette p(label1->palette());
+    //p.setColor(QPalette::Window, bg_color);
     QPalette p1 = palette();
     p1.setColor(QPalette::Highlight, Qt::red);
-            addObjetoGrafico(":/../Imagenes/fondo2.jpeg",desk_widht/8,2*desk_height/4,200,300,true);
-            setPosSir(desk_widht/8,2*desk_height/4);
+            addObjetoGrafico(":/Imagenes/fondo2.jpeg",0,0,200,300,true);
+            /*setPosSir(desk_widht/8,2*desk_height/4);
             label1->setGeometry((desk_widht/2)-150,desk_height/10,100,50);
                         label1->setStyleSheet("border-image:url(:/../Imagenes/fondo2.jpeg);");
-                        p.setColor(QPalette::Background, bg_color);
-                        label1->setPalette(p);
+                        p.setColor(QPalette::Window, bg_color);
+                        label1->setPalette(p);*/
 
 }
 
@@ -90,7 +93,7 @@ void MainWindow::cambiofondo()
 
 void MainWindow::imagen1()
 {
-    view->setBackgroundBrush(QImage(":/../Imagenes/fondo1.jpeg"));
+    view->setBackgroundBrush(QImage(":/Imagenes/fondo1.jpeg"));
 }
 
 void MainWindow::imagen2()
