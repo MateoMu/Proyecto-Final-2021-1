@@ -9,5 +9,6 @@ INPUT(
 ./debug\objetos_movil.o
 ./debug\qrc_Imagenes.o
 ./debug\moc_MainWindow.o
+./debug\moc_control_usuario.o
 ./debug\moc_objetos_movil.o
 );

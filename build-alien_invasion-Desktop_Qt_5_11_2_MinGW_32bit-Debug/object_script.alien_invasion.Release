@@ -9,5 +9,6 @@ INPUT(
 ./release\objetos_movil.o
 ./release\qrc_Imagenes.o
 ./release\moc_MainWindow.o
+./release\moc_control_usuario.o
 ./release\moc_objetos_movil.o
 );
