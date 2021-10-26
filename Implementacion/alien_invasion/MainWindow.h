@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 //Librerias necesarias
+#include <QApplication>
 #include <QMainWindow>
 #include <QKeyEvent>
 #include <QPushButton>

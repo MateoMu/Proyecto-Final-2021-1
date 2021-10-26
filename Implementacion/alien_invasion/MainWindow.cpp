@@ -86,8 +86,8 @@ void MainWindow::hideItems()
 void MainWindow::addItems2Scene()
 {
     QColor bg_color(255, 0, 0, 0);
-    //QPalette p(label1->palette());
-    //p.setColor(QPalette::Window, bg_color);
+    QPalette p(label1->palette());
+    p.setColor(QPalette::Window, bg_color);
     QPalette p1 = palette();
     p1.setColor(QPalette::Highlight, Qt::red);
 
@@ -100,7 +100,7 @@ void MainWindow::addItems2Scene()
             label1->setGeometry((desk_widht/2)-150,desk_height/10,100,50);
                         label1->setStyleSheet("border-image:url(:/../Imagenes/fondo2.jpeg);");
                         p.setColor(QPalette::Window, bg_color);
-                        label1->setPalette(p);*/
+                        label1->setPalette(p);
 
                         ///CASO DE PRUEBA
                 scene->addWidget(label1);
@@ -215,7 +215,7 @@ void MainWindow::cambiofondo()
 void MainWindow::imagen1()
 {
 
-    view->setBackgroundBrush(QImage(":/new/prefix1/Imagenes/fondo2.jpeg"))
+    view->setBackgroundBrush(QImage(":/new/prefix1/Imagenes/fondo2.jpeg"));
 
 }
 

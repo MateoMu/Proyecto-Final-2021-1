@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.14.2, 2021-10-23T16:42:59. -->
+<!-- Written by QtCreator 4.14.2, 2021-10-26T15:44:59. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -294,8 +294,9 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Daniel Mesa/Desktop/ProyectoFinal/Proyecto-Final-2021-1/Implementacion/alien_invasion/alien_invasion.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Daniel Mesa/Desktop/ProyectoFinal/Proyecto-Final-2021-1/Implementacion/alien_invasion/alien_invasion.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">alien_invasion2</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:C:/Users/Daniel Mesa/Desktop/Proyecto-Final-2021-1/Implementacion/alien_invasion/alien_invasion.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/Daniel Mesa/Desktop/Proyecto-Final-2021-1/Implementacion/alien_invasion/alien_invasion.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
