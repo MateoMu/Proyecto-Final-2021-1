@@ -54,7 +54,7 @@ void control_usuario::crearObjetos()
     database = new basedatos;
     desk_width = deskWidget->width();   desk_height = deskWidget->height();
     gameWindow->setDeskProperty(desk_width,desk_height);
-    //gameWindow->setDatabase(database);
+    gameWindow->setDatabase(database);
     msgBox = new QMessageBox(this);
     msgBox->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
     msgBox->setGeometry((desk_width/2)-100,(2*desk_height/3)-100,300,400);
@@ -98,11 +98,11 @@ void control_usuario::hideItems()
 void control_usuario::disconnectAll()
 {
     disconnect(boton1,&QPushButton::clicked,this,&control_usuario::welcomeWindow);
-    //disconnect(boton2,&QPushButton::clicked,this,&control_usuario::validateUser);
+    disconnect(boton2,&QPushButton::clicked,this,&control_usuario::validateUser);
     disconnect(boton1,&QPushButton::clicked,this,&control_usuario::signIn);
     disconnect(boton2,&QPushButton::clicked,this,&control_usuario::logIn);
     disconnect(boton1,&QPushButton::clicked,this,&control_usuario::setMenuWindow);
-    //disconnect(boton2,&QPushButton::clicked,this,&control_usuario::startGame);
+    disconnect(boton2,&QPushButton::clicked,this,&control_usuario::startGame);
     disconnect(boton1,&QPushButton::clicked,this,&control_usuario::setArcade);
     disconnect(boton2,&QPushButton::clicked,this,&control_usuario::setMultiplayer);
     disconnect(boton3,&QPushButton::clicked,this,&control_usuario::loadGame);
@@ -110,24 +110,24 @@ void control_usuario::disconnectAll()
     disconnect(boton5,&QPushButton::clicked,this,&control_usuario::exit);
     disconnect(boton6,&QPushButton::clicked,this,&control_usuario::setBackground1);
     disconnect(boton7,&QPushButton::clicked,this,&control_usuario::setBackground2);
-    //disconnect(boton2,&QPushButton::clicked,this,&control_usuario::loadDataGame);
+    disconnect(boton2,&QPushButton::clicked,this,&control_usuario::loadDataGame);
 }
 
-//void control_usuario::showSavedGames()
-//{
-//    vector<QString> data = database->mostrarPartidas(user_name);
-//    QStringList l;
-//    l<<"MATCH NAME";
-//    printVectorInTable(data,l,1);
-//}
+void control_usuario::showSavedGames()
+{
+    vector<QString> data = database->mostrarPartidas(user_name);
+    QStringList l;
+    l<<"MATCH NAME";
+    printVectorInTable(data,l,1);
+}
 
-//void control_usuario::showRecords()
-//{
-//    vector<QString> data = database->mostrarRecord();
-//    QStringList l;
-//    l<<"MATCH NAME"<<"SCORE"<<"PLAYER";
-//    printVectorInTable(data,l,3);
-//}
+void control_usuario::showRecords()
+{
+    vector<QString> data = database->mostrarRecord();
+    QStringList l;
+    l<<"MATCH NAME"<<"SCORE"<<"PLAYER";
+    printVectorInTable(data,l,3);
+}
 
 void control_usuario::exit()
 {
@@ -145,11 +145,11 @@ void control_usuario::welcomeWindow()
     hideItems();
 
     boton1->setGeometry((2*desk_width/3),(2*desk_height/4)-100,300,140);
-    boton1->setStyleSheet("border-image:url(:/personajes/imagenes/SING UP.png);");
+    boton1->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/start.jpg);");
     boton1->show();
 
     boton2->setGeometry((2*desk_width/3),(3*desk_height/4)-150,300,140);
-    boton2->setStyleSheet("border-image:url(:/personajes/imagenes/LOG IN.png);");
+    boton2->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/exit.jpg);");
     boton2->show();
 
 
@@ -165,37 +165,37 @@ void control_usuario::setCredentialsWindow()
 
     label1->setGeometry((2*desk_width/3),(desk_height/5),200,100);
     label1->setStyleSheet("border-image:url(:/personajes/imagenes/NICKNAME.png);");
-    label1->show();
+    //label1->show();
 
     line_Edit1->setGeometry((2*desk_width/3)+200,(desk_height/5),200,70);
     line_Edit1->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
-    line_Edit1->show();
+    //line_Edit1->show();
 
     label2->setGeometry((2*desk_width/3),(2*desk_height/5),200,100);
     label2->setStyleSheet("border-image:url(:/personajes/imagenes/PASSWORD.png);");
-    label2->show();
+    //label2->show();
 
     line_Edit2->setGeometry((2*desk_width/3)+200,(2*desk_height/5),200,70);
     line_Edit2->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
-    line_Edit2->show();
+    //line_Edit2->show();
 
     if(newUser){
         label3->setGeometry((2*desk_width/3),(3*desk_height/5),200,100);
         label3->setStyleSheet("border-image:url(:/personajes/imagenes/PASSWORD.png);");
-        label3->show();
+        //label3->show();
         line_Edit3->setGeometry((2*desk_width/3)+200,(3*desk_height/5),200,70);
         line_Edit3->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
-        line_Edit3->show();
+        //line_Edit3->show();
     }
     boton1->setGeometry((2*desk_width/3),desk_height-200,200,100);
-    boton1->setStyleSheet("border-image:url(:/personajes/imagenes/BACK.png);");
+    boton1->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/back.jpg);");
     boton1->show();
     boton2->setGeometry((2*desk_width/3)+250,desk_height-200,200,100);
-    boton2->setStyleSheet("border-image:url(:/personajes/imagenes/DONE.png);");
+    boton2->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/next.jpg);");
     boton2->show();
 
     connect(boton1,&QPushButton::clicked,this,&control_usuario::welcomeWindow);
-    //connect(boton2,&QPushButton::clicked,this,&control_usuario::validateUser);
+    connect(boton2,&QPushButton::clicked,this,&control_usuario::validateUser);
 
 }
 
@@ -208,20 +208,20 @@ void control_usuario::setMenuWindow()
     hideItems();
 
     boton1->setGeometry(2*desk_width/3,desk_height/7,200,100);
-    boton1->setStyleSheet("border-image:url(:/personajes/imagenes/ARCADE.png);");
+    boton1->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/SelectScene.jpg);");
     boton1->show();
     boton2->setGeometry((2*desk_width/3)-25,(2*desk_height/7),250,100);
     boton2->setStyleSheet("border-image:url(:/personajes/imagenes/MULTIPLAYER.png);");
-    boton2->show();
+    //boton2->show();
     boton3->setGeometry(2*desk_width/3,3*desk_height/7,200,100);
     boton3->setStyleSheet("border-image:url(:/personajes/imagenes/LOAD GAME.png);");
-    boton3->show();
+    //boton3->show();
     boton4->setGeometry(2*desk_width/3,4*desk_height/7,200,100);
     boton4->setStyleSheet("border-image:url(:/personajes/imagenes/RECORDS.png);");
-    boton4->show();
+    //boton4->show();
     boton5->setGeometry(2*desk_width/3,5*desk_height/7,200,100);
     boton5->setStyleSheet("border-image:url(:/personajes/imagenes/EXIT.png);");
-    boton5->show();
+    //boton5->show();
 
 
     ///CONEXION DE SIGNAL & SLOT
@@ -238,44 +238,44 @@ void control_usuario::setMatchNameWindow()
     disconnectAll();
     hideItems();
 
-    boton6->setStyleSheet("border-image:url(:/personajes/imagenes/fondo.png);");
+    boton6->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/fondo1.jpeg);");
     boton6->setGeometry((1*desk_width/3)+250,(1*desk_height/5)-50,300,200);
     boton6->show();
 
-    boton7->setStyleSheet("border-image:url(:/personajes/imagenes/Fondo_Original1.png);");
+    boton7->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/fondo2.jpeg);");
     boton7->setGeometry((2*desk_width/3)+120,(1*desk_height/5)-50,300,200);
     boton7->show();
 
     label1->setGeometry((2*desk_width/3)-80,(2*desk_height/5)+50,280,130);
     label1->setStyleSheet("border-image:url(:/personajes/imagenes/MATCH NAME.png);");
-    label1->show();
+    //label1->show();
 
     line_Edit1->setGeometry((2*desk_width/3)+200,(2*desk_height/5)+50,200,70);
     line_Edit1->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
     line_Edit1->setText("");
-    line_Edit1->show();
+    //line_Edit1->show();
 
     if(arcade){
         label2->setGeometry((2*desk_width/3),(4*desk_height/5)-150,200,100);
         label2->setStyleSheet("border-image:url(:/personajes/imagenes/DIFICULT.png);");
-        label2->show();
+        //label2->show();
 
         spin_box1->setGeometry((2*desk_width/3)+200,(4*desk_height/5)-150,100,60);
         spin_box1->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
-        spin_box1->show();
+        //spin_box1->show();
         spin_box1->setRange(1,3);
-        spin_box1->setValue(1);
+        //spin_box1->setValue(1);
     }
 
     boton1->setGeometry((2*desk_width/3),desk_height-200,200,100);
-    boton1->setStyleSheet("border-image:url(:/personajes/imagenes/BACK.png);");
+    boton1->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/back.jpg);");
     boton1->show();
     boton2->setGeometry((2*desk_width/3)+250,desk_height-200,200,100);
-    boton2->setStyleSheet("border-image:url(:/personajes/imagenes/DONE.png);");
+    boton2->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/next.jpg);");
     boton2->show();
 
     connect(boton1,&QPushButton::clicked,this,&control_usuario::setMenuWindow);
-    //connect(boton2,&QPushButton::clicked,this,&control_usuario::startGame);
+    connect(boton2,&QPushButton::clicked,this,&control_usuario::startGame);
     connect(boton6,&QPushButton::clicked,this,&control_usuario::setBackground1);
     connect(boton7,&QPushButton::clicked,this,&control_usuario::setBackground2);
 
@@ -288,29 +288,29 @@ void control_usuario::loadGame()
     disconnectAll();
     hideItems();
 
-    //showSavedGames();
+    showSavedGames();
     table_widget->setGeometry((2*desk_width/3)-80,(1*desk_height/5)-50,300,300);
     table_widget->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
-    table_widget->show();
+    //table_widget->show();
 
     label1->setGeometry((2*desk_width/3)-80,(3*desk_height/5),280,130);
     label1->setStyleSheet("border-image:url(:/personajes/imagenes/MATCH NAME.png);");
-    label1->show();
+    //label1->show();
 
     line_Edit1->setGeometry((2*desk_width/3)+200,(3*desk_height/5),200,70);
     line_Edit1->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
     line_Edit1->setText("");
-    line_Edit1->show();
+    //line_Edit1->show();
 
     boton1->setGeometry((2*desk_width/3),desk_height-200,200,100);
     boton1->setStyleSheet("border-image:url(:/personajes/imagenes/BACK.png);");
-    boton1->show();
+    //boton1->show();
     boton2->setGeometry((2*desk_width/3)+250,desk_height-200,200,100);
     boton2->setStyleSheet("border-image:url(:/personajes/imagenes/DONE.png);");
-    boton2->show();
+    //boton2->show();
 
     connect(boton1,&QPushButton::clicked,this,&control_usuario::setMenuWindow);
-    //connect(boton2,&QPushButton::clicked,this,&control_usuario::loadDataGame);
+    connect(boton2,&QPushButton::clicked,this,&control_usuario::loadDataGame);
 }
 
 void control_usuario::showRecordsWindow()
@@ -319,15 +319,15 @@ void control_usuario::showRecordsWindow()
     disconnectAll();
     hideItems();
 
-    //showRecords();
+    showRecords();
     table_widget->setGeometry((2*desk_width/3)-80,(2*desk_height/5)-50,300,300);
     table_widget->setStyleSheet("border-image:url(:/personajes/imagenes/index.png);");
-    table_widget->show();
+    //table_widget->show();
 
 
     boton1->setGeometry((2*desk_width/3),desk_height-200,200,100);
     boton1->setStyleSheet("border-image:url(:/personajes/imagenes/BACK.png);");
-    boton1->show();
+    //boton1->show();
 
     connect(boton1,&QPushButton::clicked,this,&control_usuario::setMenuWindow);
 }
@@ -377,95 +377,101 @@ void control_usuario::signIn()
     setCredentialsWindow();
 }
 
-//void control_usuario::validateUser()
-//{
-//    bool proced = false;
-//    QString username = line_Edit1->text();
-//    QString password1 = line_Edit2->text();
-//    QString password2 = line_Edit3->text();
+void control_usuario::validateUser()
+{
+    bool proced = false;
+    QString username = line_Edit1->text();
+    QString password1 = line_Edit2->text();
+    QString password2 = line_Edit3->text();
 
-//    database->mostrarUsuarios();
-//    bool validate;
-//    if(username != ""){
-//        /// VALIDAR QUE EL USUARIO EXISTA Y LAS CONTRASEÑAS COINCIDAN
-//        validate = database->validarUsuario(username,password1);
-//        if(newUser){
-//            /// USUARIO NUEVO-> VERIFICAR QUE EL NOMBRE NO EXISTA Y CONTRASEÑAS COINCIDAN
-//            if(!database->getUser()){
-//                /// EL USUARIO NO EXISTE
-//                if(password1 == password2){
-//                    database->insertarUsuario(username,password1);
-//                    user_name = username;
-//                    proced = true;
 
-//                }
-//                else infoBox("WARNING","PASSWORD DON`T MATCH.","");
-//            }
-//            else{
-//                /// EL USUARIO YA EXISTE
-//                infoBox("WARNING","USER ALREADY EXIST.","");
-//            }
-//        }
-//        else{
-//            /// USUARIO EXISTENTE -> VERIFICAR QUE SEA CIERTO Y CONTRASEÑAS COINCIDAN
-//            if(validate){
-//                proced = true;
-//                user_name = username;
-//                //qDebug()<<"USUARIO CORRECTO";
-//            }
-//            else if(database->getUser()) infoBox("WARNING","INCORRECT PASSWORD","");
-//            else infoBox("WARNING","INCORRECT USERNAME.","");
-//            //qDebug()<<"USUARIO CHEQUEADO";
-//        }
-//    }
-//    else infoBox("WARNING","INCORECT USERNAME.","");
-//    if(proced) setMenuWindow();
-//}
+    ///Prueba///
+    setMenuWindow();
 
-//void control_usuario::createUser()
-//{
-//    /// VALIDAR QUE EL USUARIO NO EXISTA Y LAS CONTRASEÑAS COINCIDAN
-//}
 
-//void control_usuario::startGame()
-//{
-//    int level = 1;
-//    if(arcade) level = spin_box1->value();
-//    QString match_name = line_Edit1->text();
-//    if(database->validarMatchName(match_name)){
-//        showMainWindow();
-//        gameWindow->setArcade(arcade);
-//        gameWindow->loadGameWigets();
-//        gameWindow->setMatch_name(match_name);
-//        gameWindow->setUsername(user_name);
-//        gameWindow->setLevel(level);
-//        gameWindow->startGame("NEW GAME","DO YOUR BEST.");
-//        gameWindow->setDefaultValues();
-//    }
-//    else{
-//        infoBox("WARNING","THIS NAME ALREADY EXISTS.","");
-//        //infoBox("WARNING","","");
-//        //qDebug()<<"NOMBRE NO VALIDO";
-//    }
+    database->mostrarUsuarios();
+    bool validate;
+    if(username != ""){
+        /// VALIDAR QUE EL USUARIO EXISTA Y LAS CONTRASEÑAS COINCIDAN
+        validate = database->validarUsuario(username,password1);
+        if(newUser){
+            /// USUARIO NUEVO-> VERIFICAR QUE EL NOMBRE NO EXISTA Y CONTRASEÑAS COINCIDAN
+            if(!database->getUser()){
+                /// EL USUARIO NO EXISTE
+                if(password1 == password2){
+                    database->insertarUsuario(username,password1);
+                    user_name = username;
+                    proced = true;
 
-//}
+                }
+                else infoBox("WARNING","PASSWORD DON`T MATCH.","");
+            }
+            else{
+                /// EL USUARIO YA EXISTE
+                infoBox("WARNING","USER ALREADY EXIST.","");
+            }
+        }
+        else{
+            /// USUARIO EXISTENTE -> VERIFICAR QUE SEA CIERTO Y CONTRASEÑAS COINCIDAN
+            if(validate){
+                proced = true;
+                user_name = username;
+                //qDebug()<<"USUARIO CORRECTO";
+            }
+            else if(database->getUser()) infoBox("WARNING","INCORRECT PASSWORD","");
+            //else infoBox("WARNING","INCORRECT USERNAME.","");
+            //qDebug()<<"USUARIO CHEQUEADO";
+        }
+    }
+    //else infoBox("WARNING","INCORECT USERNAME.","");
+    if(proced) setMenuWindow();
+}
 
-//void control_usuario::loadDataGame()
-//{
-//    vector<QString> data,enemys;
-//    QString match_n = line_Edit1->text();
-//    data = database->mostrarDatos(match_n,user_name);
-//    enemys = database->mostrarEnemigos(match_n,user_name);
-//    if(!data.empty() && !enemys.empty()){
-//        showMainWindow();
-//        gameWindow->loadGame(data,enemys);
-//    }
-//    else{
-//        /// PROBLEMAS AL CARGAR PARTIDA
-//        infoBox("WARNING.","CANNOT LOAD GAME.","");
-//        //qDebug()<<"NO SE HA PODIDO CARGAR LA PARTIDA";
-//    }
-//}
+void control_usuario::createUser()
+{
+    /// VALIDAR QUE EL USUARIO NO EXISTA Y LAS CONTRASEÑAS COINCIDAN
+}
+
+void control_usuario::startGame()
+{
+    int level = 1;
+    if(arcade) level = spin_box1->value();
+    QString match_name = line_Edit1->text();
+    if(database->validarMatchName(match_name)){
+        showMainWindow();
+        gameWindow->setArcade(arcade);
+        gameWindow->loadGameWigets();
+        gameWindow->setMatch_name(match_name);
+        gameWindow->setUsername(user_name);
+        gameWindow->setLevel(level);
+        gameWindow->startGame("NEW GAME","DO YOUR BEST.");
+        gameWindow->setDefaultValues();
+    }
+    else{
+        infoBox("WARNING","THIS NAME ALREADY EXISTS.","");
+        //infoBox("WARNING","","");
+        //qDebug()<<"NOMBRE NO VALIDO";
+    }
+
+}
+
+void control_usuario::loadDataGame()
+{
+    vector<QString> data,enemys;
+    QString match_n = line_Edit1->text();
+    data = database->mostrarDatos(match_n,user_name);
+    enemys = database->mostrarEnemigos(match_n,user_name);
+    if(!data.empty() && !enemys.empty()){
+        showMainWindow();
+        gameWindow->loadGame(data,enemys);
+    }
+    else{
+        /// PROBLEMAS AL CARGAR PARTIDA
+        infoBox("WARNING.","CANNOT LOAD GAME.","");
+        //qDebug()<<"NO SE HA PODIDO CARGAR LA PARTIDA";
+    }
+}
+
 
 void control_usuario::setBackground1()
 {

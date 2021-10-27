@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>control_usuario</class>
- <widget class="QWidget" name="control_usuario">
+ <widget class="QDialog" name="control_usuario">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border-image: url(:/new/prefix1/Imagenes/fondo2.jpeg);</string>
   </property>
  </widget>
  <resources/>

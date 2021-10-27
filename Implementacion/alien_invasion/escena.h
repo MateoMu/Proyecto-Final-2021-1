@@ -33,12 +33,32 @@ public:
     void explode(objetos_movil *enem);
     void explodePlusPlus();
 
+        /// MANEJO DE ATRIBUTO SANGRE
+    void setHurt();
+    int getHurt();
+    int getBlood() const;
+    void setBlood(int value);
+
+        /// FUNCION DE CONTROL DE JUEGO
+    void pause();
+    void start();
+    void restart();
+
+         // / CONTROL DE COLISIONES Y PUESTAS EN ESCENA
+     bool  deleteFromScene ();
+
+         /// MANEJO DE ATRIBUTO SCORE
+     int getScore() const;
+     void setScore(int value);
+     void setScorePlus();
+
     vector<objetos_movil *> getObjetosMoviles() const;
     void setBackGround(bool value);
 
 private:
         /// APUNTADOR A OBJETOS GRAFICOS
     objetos_graficos *personaje;
+    objetos_graficos *explosiones;
     objetos_movil *muni;
 
         /// CONTENEDORES DE OBJETOS

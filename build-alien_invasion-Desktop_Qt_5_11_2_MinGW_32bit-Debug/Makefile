@@ -232,6 +232,7 @@ Makefile: ../Implementacion/alien_invasion/alien_invasion.pro C:/Qt1/5.11.2/ming
 		C:/Qt1/5.11.2/mingw53_32/lib/qtmaind.prl \
 		C:/Qt1/5.11.2/mingw53_32/lib/Qt5Widgets.prl \
 		C:/Qt1/5.11.2/mingw53_32/lib/Qt5Gui.prl \
+		C:/Qt1/5.11.2/mingw53_32/lib/Qt5Sql.prl \
 		C:/Qt1/5.11.2/mingw53_32/lib/Qt5Core.prl
 	$(QMAKE) -o Makefile ..\Implementacion\alien_invasion\alien_invasion.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt1/5.11.2/mingw53_32/mkspecs/features/spec_pre.prf:
@@ -405,6 +406,7 @@ C:/Qt1/5.11.2/mingw53_32/mkspecs/features/lex.prf:
 C:/Qt1/5.11.2/mingw53_32/lib/qtmaind.prl:
 C:/Qt1/5.11.2/mingw53_32/lib/Qt5Widgets.prl:
 C:/Qt1/5.11.2/mingw53_32/lib/Qt5Gui.prl:
+C:/Qt1/5.11.2/mingw53_32/lib/Qt5Sql.prl:
 C:/Qt1/5.11.2/mingw53_32/lib/Qt5Core.prl:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\Implementacion\alien_invasion\alien_invasion.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"

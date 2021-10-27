@@ -2,7 +2,15 @@
     <qresource prefix="/new/prefix1">
         <file>Imagenes/fondo1.jpeg</file>
         <file>Imagenes/fondo2.jpeg</file>
-        <file>Imagenes/Bala1.png</file>
+        <file>Imagenes/enemigo.jpg</file>
+        <file>Imagenes/Bala1.jpg</file>
+        <file>Imagenes/militar1.jpg</file>
+        <file>Imagenes/Bala2.jpeg</file>
+        <file>Imagenes/back.jpg</file>
+        <file>Imagenes/exit.jpg</file>
+        <file>Imagenes/next.jpg</file>
+        <file>Imagenes/start.jpg</file>
+        <file>Imagenes/SelectScene.jpg</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>
