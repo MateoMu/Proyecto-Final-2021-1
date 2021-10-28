@@ -11,6 +11,18 @@
         <file>Imagenes/next.jpg</file>
         <file>Imagenes/start.jpg</file>
         <file>Imagenes/SelectScene.jpg</file>
+        <file>Imagenes/crear cuenta.png</file>
+        <file>Imagenes/nombre de la escena.png</file>
+        <file>Imagenes/iniciar sesion.png</file>
+        <file>Imagenes/multijugador.png</file>
+        <file>Imagenes/nivel.png</file>
+        <file>Imagenes/cargar partida.png</file>
+        <file>Imagenes/usuario.png</file>
+        <file>Imagenes/life.png</file>
+        <file>Imagenes/score.png</file>
+        <file>Imagenes/confirmar.png</file>
+        <file>Imagenes/contra2.png</file>
+        <file>Imagenes/confirmarcontra.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

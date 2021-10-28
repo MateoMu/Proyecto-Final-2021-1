@@ -54,3 +54,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     Imagenes.qrc
+
+DISTFILES += \
+    Imagenes/crear cuenta.png \
+    Imagenes/nombre de la escena.png

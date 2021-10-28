@@ -200,14 +200,14 @@ void MainWindow::addItems2Scene(int opc)
             setPosSir((2*desk_widht/8),(3*desk_height/4)-50);
                 ///LABELS
             label1->setGeometry(40,40,80,40);
-            label1->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/start.jpg);");
+            label1->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/life.png);");
             label1->setPalette(p);
             life_bar->setGeometry(130,40,150,40);
             life_bar->setPalette(p1);
             life_bar->setRange(0,100);
 
             label2->setGeometry((7*desk_widht/8),90,100,40);
-            label2->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/next.jpg);");
+            label2->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/score.png);");
             label2->setPalette(p);
             display_score->setGeometry((7*desk_widht/8),20,100,60);
             display_score->setPalette(p);
@@ -431,15 +431,15 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key() == Qt::Key_S){
         //qDebug()<<"S Pressed";
-        move1 = 2;
+        move1 = 3;
     }
     else if(event->key() == Qt::Key_W){
         //qDebug()<<"W Pressed";
-        move1 = 3;
+        //move1 = 2;
     }
     else if(event->key() == Qt::Key_D){
         //qDebug()<<"D Pressed";
-        move1 = 3;
+        //move1 = 3;
     }
     else if(event->key() == Qt::Key_J){
         //qDebug()<<"J Pressed";

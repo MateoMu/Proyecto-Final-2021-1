@@ -69,7 +69,12 @@ OBJECTS       = debug/main.o \
 		debug/moc_control_usuario.o \
 		debug/moc_objetos_movil.o
 
-DIST          =  ..\Implementacion\alien_invasion\MainWindow.h \
+DIST          = Imagenes/crear \
+		cuenta.png \
+		Imagenes/nombre \
+		de \
+		la \
+		escena.png ..\Implementacion\alien_invasion\MainWindow.h \
 		..\Implementacion\alien_invasion\escena.h \
 		..\Implementacion\alien_invasion\basedatos.h \
 		..\Implementacion\alien_invasion\movimientos.h \
@@ -127,10 +132,22 @@ compiler_rcc_clean:
 	-$(DEL_FILE) debug\qrc_Imagenes.cpp
 debug/qrc_Imagenes.cpp: ../Implementacion/alien_invasion/Imagenes.qrc \
 		C:/Qt1/5.11.2/mingw53_32/bin/rcc.exe \
-		../Implementacion/alien_invasion/Imagenes/fondo1.jpeg \
 		../Implementacion/alien_invasion/Imagenes/Bala1.jpg \
+		../Implementacion/alien_invasion/Imagenes/life.png \
+		../Implementacion/alien_invasion/Imagenes/nivel.png \
+		../Implementacion/alien_invasion/Imagenes/start.jpg \
+		../Implementacion/alien_invasion/Imagenes/militar1.jpg \
+		../Implementacion/alien_invasion/Imagenes/exit.jpg \
+		../Implementacion/alien_invasion/Imagenes/SelectScene.jpg \
+		../Implementacion/alien_invasion/Imagenes/multijugador.png \
+		../Implementacion/alien_invasion/Imagenes/Bala2.jpeg \
+		../Implementacion/alien_invasion/Imagenes/fondo2.jpeg \
+		../Implementacion/alien_invasion/Imagenes/fondo1.jpeg \
+		../Implementacion/alien_invasion/Imagenes/next.jpg \
 		../Implementacion/alien_invasion/Imagenes/enemigo.jpg \
-		../Implementacion/alien_invasion/Imagenes/fondo2.jpeg
+		../Implementacion/alien_invasion/Imagenes/back.jpg \
+		../Implementacion/alien_invasion/Imagenes/usuario.png \
+		../Implementacion/alien_invasion/Imagenes/score.png
 	C:\Qt1\5.11.2\mingw53_32\bin\rcc.exe -name Imagenes ..\Implementacion\alien_invasion\Imagenes.qrc -o debug\qrc_Imagenes.cpp
 
 compiler_moc_predefs_make_all: debug/moc_predefs.h
