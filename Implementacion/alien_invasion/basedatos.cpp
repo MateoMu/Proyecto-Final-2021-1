@@ -2,6 +2,7 @@
 
 basedatos::basedatos()
 {
+        /// Se crea la base de datos ///
     QString nombre;
         nombre.append("database_alien_invasion.sqlite");
         database= QSqlDatabase::addDatabase("QSQLITE");

@@ -23,6 +23,7 @@
         <file>Imagenes/confirmar.png</file>
         <file>Imagenes/contra2.png</file>
         <file>Imagenes/confirmarcontra.png</file>
+        <file>Imagenes/fondo.jpg</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>

@@ -24,7 +24,7 @@ public:
         if (control_usuario->objectName().isEmpty())
             control_usuario->setObjectName(QStringLiteral("control_usuario"));
         control_usuario->resize(759, 341);
-        control_usuario->setStyleSheet(QStringLiteral("border-image: url(:/new/prefix1/Imagenes/fondo2.jpeg);"));
+        control_usuario->setStyleSheet(QStringLiteral("border-image: url(:/new/prefix1/Imagenes/fondo.jpg);"));
 
         retranslateUi(control_usuario);
 

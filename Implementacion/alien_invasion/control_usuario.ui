@@ -14,7 +14,7 @@
    <string>Dialog</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">border-image: url(:/new/prefix1/Imagenes/fondo2.jpeg);</string>
+   <string notr="true">border-image: url(:/new/prefix1/Imagenes/fondo.jpg);</string>
   </property>
  </widget>
  <resources/>
