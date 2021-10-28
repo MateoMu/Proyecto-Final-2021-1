@@ -2,7 +2,6 @@
 #define MAINWINDOW_H
 
 //Librerias necesarias
-#include <QApplication>
 #include <QMainWindow>
 #include <QKeyEvent>
 #include <QPushButton>
@@ -15,6 +14,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "escena.h"
+#include "basedatos.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {class MainWindow;}
@@ -28,16 +28,45 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+        /// FUNCIONES DE PUERTO SERIAL
+    void serialInit();
+    void serialRead();
+
         /// CARACTERISTICAS DE PANTALLA
     void setDeskProperty(int w,int h);
 
         /// FUNCIONES DE CARGA DE OBJETOS Y PRESENTACION
     void instanceItems();
     void hideItems();
-    void addItems2Scene();
+    void addItems2Scene(int opc);
     void connectItems();
+    void loadGameWigets();
+    void startGame(QString title,QString text);
+    void loadGame(vector<QString> data, vector<QString> enemys);
+    void displayData();
+
+        /// FUNCIONES CONTROL DEL JUEGO
+    void endOfGame();
+    void pause();
+    void start();
+    void restart(QString title,QString text);
+    bool questionBox(QString title,  QString text,QString infoText,
+                     const char *_boton1, const char *_boton2);
+    int question3Box(QString title,  QString text,QString infoText,
+                     const char *_boton1, const char *_boton2,const char *_boton3);
+    void infoBox(QString title, QString text, QString infoText);
+
+        /// MODOS DE JUEGO
+    void setMultiplayer();
+
+        /// FUNCIONES DE GUARDADO
+    bool saveMatchData();
+    bool saveListEnemies(vector<objetos_movil *> vec);
+    void loadData(vector<QString> data);
+    void loadEnemys(vector<QString> enemys);
 
         /// SLOTS
+    void comeBack();
     void moveObject();
     void addObjetoGrafico(QString ruta, int x, int y, int w, int h, bool main);
     void addObjetoMovil(QString ruta,int xo,int yo,int xf,int yf,int w,int h,int _move);
@@ -45,29 +74,69 @@ public:
     void addObjetoMovil1();
     void addObjetoMovil2();
     void addObjetoMovil3();
+    void secondsPlusPlus();
     void addEnemy();
 
+        ///Eventos de Teclado
+    void keyPressEvent(QKeyEvent *event);
         ///Eventos del Mouse
-    void mousePressEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event) ;
+
+        /// FUNCIONES AUXILIARES
+    int sec2min(int _seconds,bool out);
+    bool canShot(int limit);
+    void setGameValues(int _blood, int _score, int _player, int _a1, int _a2, int _a3, bool _arcade);
+    void setDefaultValues();
 
         /// FUNCIONES DE PRUEBA
     void add();
     void cambiofondo();
-
+    void actualizarcronometro();
+    void Estado();
     void imagen1();
     void imagen2();
     void setPosSir(int x, int y);
+    bool getArcade() const;
+    void setArcade(bool value);
+    int getPlayer() const;
+    int getGame_time() const;
+    void setGame_time(int value);
+    void setLevel(int value);
+    void setDatabase(basedatos *value);
+    void setMatch_name(const QString &value);
+    void setUsername(const QString &value);
     void setBackground1();
     void setBackground2();
 
 private:
     Ui::MainWindow *ui;
 
+    basedatos *database;
+    QMessageBox *msgBox;
+
+        /// BOTONES
+    QPushButton *boton;
+    QPushButton *boton2;
+    QPushButton *boton3;
+    QPushButton *boton4;
+    QPushButton *boton5;
+
         /// LABELS
     QLabel *label1;
     QLabel *label2;
 
+        /// LCD DISPLAYS
+    QLCDNumber *display_time;
+    QLCDNumber *display_ammo1;
+    QLCDNumber *display_ammo2;
+    QLCDNumber *display_ammo3;
+    QLCDNumber *display_score;
+
+        /// BARRA DE SANGRE
+    QProgressBar *life_bar;
+
         /// TIMERS
+    QTimer *serial_timer;
     QTimer *enemy_timer;
     QTimer *seconds;
     QTimer *timer;
@@ -79,9 +148,6 @@ private:
         /// MEDIDAS DE ESCRITORIO
     int desk_widht,desk_height;
 
-        /// VALORES DE TIMERS
-    int game_time = 0;
-
         /// VARIABLES AUXILIARES
     QString time_format;
     bool img = true;
@@ -90,21 +156,32 @@ private:
 
         /// VARIABLES DE CONTROL
     QString match_name,username;
-    QString main_caracter_path = ":/new/prefix1/Imagenes/fondo1.jpeg";
-    QString enemy_path = ":/new/prefix1/Imagenes/Bala1.png";
-    QString bala1_path = ":/new/prefix1/Imagenes/Bala1.png";
-    QString bala2_path = ":/new/prefix1/Imagenes/Bala1.png";
-    QString bala3_path = ":/new/prefix1/Imagenes/Bala1.png";
+    QString main_caracter_path = ":/new/prefix1/Imagenes/militar1.jpg";
+    QString enemy_path = ":/new/prefix1/Imagenes/enemigo.jpg";
+    QString bala1_path = ":/new/prefix1/Imagenes/Bala2.jpeg";
+    QString bala2_path = ":/new/prefix1/Imagenes/Bala1.jpg";
+    QString bala3_path = ":/new/prefix1/Imagenes/Bala1.jpg";
+    bool arcade = true;
+    bool paused = false;
+    int player = 1;
+    bool enable2Shot = true;
+    float increment = 1.3;
+    int score_player1 = 0,score_player2 = 0;
+    int score_1 = 0,score_2 = 0;
+    int high_score = 0;
+
         ///POSICION DE PERSONAJE PRINCIPAL
     int x_sir = desk_widht/8, y_sir = desk_height-310;
     int w_sir = 200, h_sir = 300;
 
         /// NUMERO DE MUNICIONES
     int ammu1 = 10, ammu2 = 10, ammu3 =  10;
+
         /// INDICADOR DE TIPO MOVIMIENTO
     int move1 = 1 , move2 = 1;
+
         /// VALORES DE TIMERS
-    int fs_time = 50;
+    int fs_time = 50, game_time = 0;
     int time_enemys = 1500,time_seconds = 1000;
     int level = 1;
 

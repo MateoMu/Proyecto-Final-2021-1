@@ -9,17 +9,14 @@
 #include <QMessageBox>
 #include "objetos_movil.h"
 
-namespace Ui {
-class control_usuario;
-}
 
 class basedatos
 {
 public:
-    //CONSTRUCTOR
+        //CONSTRUCTOR
     basedatos();
 
-    //CREAR TABLAS
+//CREAR TABLAS
     void crearTabladeUsuarios();
     void crearTabladeDatos();
     void crearTabladeEnemigos();
@@ -29,7 +26,8 @@ public:
     void insertarUsuario();
     void insertarUsuario(QString user, QString pass);
     bool insertarDatos(QString match_name, QString username, bool arcade, int nivel, int player,
-                        int blood, int gameTime, int score_1, int score_2, int ammo1, int ammo2, int ammo3);
+                       int blood, int gameTime, int score_1, int score_2, int ammo1,
+                       int ammo2, int ammo3);
     bool insertarEnemigos(QString match_name, QString username, int x, int y, int v0, int angle, int move);
 
     void insertarRecord();
@@ -81,6 +79,7 @@ private:
 
     int high_score;
     bool user, password;
+
 };
 
 #endif // BASEDATOS_H

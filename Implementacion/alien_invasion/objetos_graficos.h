@@ -30,7 +30,6 @@ public:
 
     void setEscala(float value);
     void escalaMinusMinus();
-
     void setRest(float value);
 
 private:

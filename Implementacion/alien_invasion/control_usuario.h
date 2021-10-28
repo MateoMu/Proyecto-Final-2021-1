@@ -1,7 +1,7 @@
 #ifndef CONTROL_USUARIO_H
 #define CONTROL_USUARIO_H
 #include <QDialog>
-#include <QtWidgets>
+#include <QDesktopWidget>
 #include <QTableWidget>
 #include <QLineEdit>
 #include <QSpinBox>
@@ -11,14 +11,14 @@
 #include "basedatos.h"
 
 namespace Ui {
-class Control_Usuario;
+class control_usuario;
 }
 
 class control_usuario : public QDialog
 {
     Q_OBJECT
-public:
 
+public:
     explicit control_usuario(QWidget *parent = nullptr);
     ~control_usuario();
 
@@ -62,9 +62,12 @@ public:
     void printVectorInTable(vector<QString> vec, QStringList l, int columns);
     void infoBox(QString title, QString text, QString infoText);
 
+
+
 private:
-    Ui::Control_Usuario *ui;
+    Ui::control_usuario *ui;
     MainWindow *gameWindow;
+    QDesktopWidget *deskWidget;
     basedatos *database;
     QMessageBox *msgBox;
 
