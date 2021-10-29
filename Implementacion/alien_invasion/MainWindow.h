@@ -156,11 +156,11 @@ private:
 
         /// VARIABLES DE CONTROL
     QString match_name,username;
-    QString main_caracter_path = ":/new/prefix1/Imagenes/militar1.jpg";
-    QString enemy_path = ":/new/prefix1/Imagenes/enemigo.jpg";
-    QString bala1_path = ":/new/prefix1/Imagenes/Bala2.jpeg";
-    QString bala2_path = ":/new/prefix1/Imagenes/Bala1.jpg";
-    QString bala3_path = ":/new/prefix1/Imagenes/Bala1.jpg";
+    QString main_caracter_path = ":/new/prefix1/Imagenes/militar.png";
+    QString enemy_path = ":/new/prefix1/Imagenes/enemigo.png";
+    QString bala1_path = ":/new/prefix1/Imagenes/bala2.png";
+    QString bala2_path = ":/new/prefix1/Imagenes/bala1.png";
+    QString bala3_path = ":/new/prefix1/Imagenes/bala1.png";
     bool arcade = true;
     bool paused = false;
     int player = 1;

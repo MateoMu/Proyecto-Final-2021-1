@@ -94,8 +94,12 @@ void MainWindow::instanceItems()
         /// ESCENARIO
     view = new QGraphicsView(this);
     scene = new escena();
-
     msgBox = new QMessageBox(this);
+
+    /// icono para el control de usuario ///
+    setWindowTitle("Alien Invasion");
+    setWindowIcon(QIcon(":/new/prefix1/Imagenes/alien.png"));
+
         /// BOTONES
     boton = new QPushButton();
     boton2 = new QPushButton();
@@ -192,7 +196,7 @@ void MainWindow::addItems2Scene(int opc)
             break;
         case 2:
                 /// IMAGEN DE FONDO PARA LA VENTANA DE MENSAJES
-            msgBox->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/enemigo.jpg);");
+            msgBox->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/fondo.jpg);");
             msgBox->setPalette(p);
             msgBox->setGeometry((desk_widht/2)-100,(2*desk_height/3)-100,300,400);
                 ///PUESTA EN ESCENA DEL PERSONAJE
@@ -216,13 +220,13 @@ void MainWindow::addItems2Scene(int opc)
                 ///BOTONES
             boton->setGeometry(100,50,100,80);
             boton2->setGeometry((7*desk_widht/8)-320,20,80,50);
-            boton2->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/Bala2.jpeg);");
+            boton2->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/bala2.png);");
             boton2->setPalette(p);
 //            boton3->setGeometry(50,210,80,60);
 //            boton3->setStyleSheet("border-image:url(:/personajes/imagenes/Bala1.png);");
 //            boton3->setPalette(p);
             boton4->setGeometry((7*desk_widht/8)-210,20,80,50);
-            boton4->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/Bala1.jpg);");
+            boton4->setStyleSheet("border-image:url(:/new/prefix1/Imagenes/bala1.png);");
             boton4->setPalette(p);
             //boton5->setGeometry(600,300,100,80);
             display_ammo1->setGeometry((7*desk_widht/8)-320,80,80,50);

@@ -52,6 +52,11 @@ void control_usuario::crearObjetos()
     deskWidget = new QDesktopWidget;
     gameWindow = new MainWindow(this);gameWindow->hide();
     database = new basedatos;
+
+    /// icono para el control de usuario ///
+    setWindowTitle("Alien Invasion");
+    setWindowIcon(QIcon(":/new/prefix1/Imagenes/alien.png"));
+
     desk_width = deskWidget->width();   desk_height = deskWidget->height();
     gameWindow->setDeskProperty(desk_width,desk_height);
     gameWindow->setDatabase(database);

@@ -24,6 +24,8 @@
         <file>Imagenes/enemigo.png</file>
         <file>Imagenes/fondo.jpg</file>
         <file>Imagenes/militar.png</file>
+        <file>Imagenes/score2.png</file>
+        <file>Imagenes/alien.png</file>
     </qresource>
     <qresource prefix="/"/>
 </RCC>
