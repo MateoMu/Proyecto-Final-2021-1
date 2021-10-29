@@ -1,0 +1,14 @@
+INPUT(
+./release\main.o
+./release\MainWindow.o
+./release\escena.o
+./release\basedatos.o
+./release\movimientos.o
+./release\objetos_graficos.o
+./release\control_usuario.o
+./release\objetos_movil.o
+./release\qrc_Imagenes.o
+./release\moc_MainWindow.o
+./release\moc_control_usuario.o
+./release\moc_objetos_movil.o
+);
